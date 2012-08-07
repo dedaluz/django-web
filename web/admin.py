@@ -25,8 +25,8 @@ class FeaturedSlideAdmin(AdminImageMixin, admin.ModelAdmin):
     
     class Media:
         js = [
-            '/static/admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
-            '/static/path/to/your/tinymce_setup.js',
+            '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
+            '/static/grappelli/tinymce_setup/tinymce_setup.js',
         ]
        
     list_display = ('name', 'position', 'status', 'thumbnail',)
