@@ -17,8 +17,13 @@ class FeaturedAlbumAdmin(admin.ModelAdmin):
     
 class FeaturedSlideAdmin(AdminImageMixin, admin.ModelAdmin):
     """docstring for FeaturedSlide"""
+
+    def thumbnail(self, obj):
+           im = get_thumbnail(obj.image, '60x60', quality=99)
+           return u"<img src='%s'>" % im.url
+    thumbnail.allow_tags = True
        
-    list_display = ('name', 'position', 'status',)
+    list_display = ('name', 'position', 'status', 'thumbnail',)
     pass
         
 
