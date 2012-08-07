@@ -22,6 +22,12 @@ class FeaturedSlideAdmin(AdminImageMixin, admin.ModelAdmin):
            im = get_thumbnail(obj.image, '60x60', quality=99)
            return u"<img src='%s'>" % im.url
     thumbnail.allow_tags = True
+    
+    class Media:
+        js = [
+            '/static/admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
+            '/static/path/to/your/tinymce_setup.js',
+        ]
        
     list_display = ('name', 'position', 'status', 'thumbnail',)
     pass
