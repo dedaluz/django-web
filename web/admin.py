@@ -9,6 +9,7 @@ class FeaturedSlideInline(AdminImageMixin, admin.TabularInline):
     fields = ('position', 'image', 'status', )
     # define the sortable
     sortable_field_name = "position"
+    extra = 0
 
 class FeaturedAlbumAdmin(admin.ModelAdmin):
     list_display = ('name', )
